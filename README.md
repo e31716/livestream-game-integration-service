@@ -1,4 +1,4 @@
-# Livestream Game Integrated Service - Frontend
+# Livestream Game Integration Service - Frontend
 
 This repository is just for code review, so some parts of code, assets and setting files are removed which means this project is unable to run successfully.
 
