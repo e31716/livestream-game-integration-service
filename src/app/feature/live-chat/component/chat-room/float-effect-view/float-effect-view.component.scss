@@ -1,0 +1,181 @@
+#float-effect-view {
+    height: 100%;
+
+    .float-item {
+        position: absolute;
+        bottom: 0;
+        width: 25px;
+        height: 25px;
+
+        // 第一種動畫路徑(右下往左上螺旋)
+        &.animate-path-1 {
+            animation: bezierAnimationOne 2s linear 1;
+            animation-fill-mode: forwards;
+        }
+
+        // 第二種動畫路徑(左下往右上螺旋)
+        &.animate-path-2 {
+            animation: bezierAnimationTwo 2s linear 1;
+            animation-fill-mode: forwards;
+        }
+
+        // 第三種動畫路徑(中央小左小右)
+        &.animate-path-3 {
+            animation: bezierAnimationThree 2s linear 1;
+            animation-fill-mode: forwards;
+        }
+
+        .mask {
+            position: relative;
+            display: none;
+            top: 4px;
+            mask: url('src/assets/img/love.svg');
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background-color: violet;
+            mask-size: cover;
+            margin-right: 5px;
+        }
+
+    }
+
+
+    &.is-mobile {
+        .float-item {
+            width: 15px;
+            height: 15px;
+            right: 8px;
+            bottom: 10px;
+
+            .mask {
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+}
+
+// 第一種動畫路徑(右下往左上螺旋)
+@keyframes bezierAnimationOne {
+    0.0000% {
+        transform: translate(0.0px, 0.0px);
+    }
+
+    8.2914% {
+        transform: translate(6.3px, -24.5px);
+    }
+
+    15.9336% {
+        transform: translate(10.0px, -47.5px);
+    }
+
+    29.7703% {
+        transform: translate(11.2px, -89.8px);
+    }
+
+    42.3462% {
+        transform: translate(6.6px, -127.9px);
+    }
+
+    65.3753% {
+        transform: translate(-7.5px, -196.7px);
+    }
+
+    76.3126% {
+        transform: translate(-11.1px, -229.9px);
+    }
+
+    87.4949% {
+        transform: translate(-8.3px, -263.9px);
+    }
+
+    93.5001% {
+        transform: translate(-3.5px, -281.6px);
+    }
+
+    100.0000% {
+        transform: translate(4.0px, -300.0px);
+        opacity: 0;
+    }
+}
+
+// 第二種動畫路徑(左下往右上螺旋)
+@keyframes bezierAnimationTwo {
+    0.0000% {
+        transform: translate(0.0px, 0.0px);
+    }
+
+    11.4486% {
+        transform: translate(-8.9px, -34.0px);
+    }
+
+    19.1401% {
+        transform: translate(-12.0px, -57.3px);
+    }
+
+    33.3955% {
+        transform: translate(-11.5px, -101.0px);
+    }
+
+    46.6374% {
+        transform: translate(-5.0px, -141.1px);
+    }
+
+    70.6223% {
+        transform: translate(12.6px, -212.5px);
+    }
+
+    81.2759% {
+        transform: translate(17.1px, -244.9px);
+    }
+
+    86.3576% {
+        transform: translate(16.8px, -260.4px);
+    }
+
+    91.4079% {
+        transform: translate(14.2px, -275.7px);
+    }
+
+    100.0000% {
+        transform: translate(4.0px, -300.0px);
+        opacity: 0;
+    }
+}
+
+// 第三種動畫路徑(中央小左小右)
+@keyframes bezierAnimationThree {
+    0.0000% {
+        transform: translate(0.0px, 0.0px);
+    }
+
+    16.7032% {
+        transform: translate(4.8px, -51.0px);
+    }
+
+    29.8407% {
+        transform: translate(5.3px, -91.4px);
+    }
+
+    41.3441% {
+        transform: translate(3.1px, -126.6px);
+    }
+
+    62.5314% {
+        transform: translate(-3.8px, -191.3px);
+    }
+
+    73.6733% {
+        transform: translate(-5.8px, -225.4px);
+    }
+
+    86.2115% {
+        transform: translate(-5.2px, -263.9px);
+    }
+
+    100.0000% {
+        transform: translate(-1.0px, -306.0px);
+        opacity: 0;
+    }
+}

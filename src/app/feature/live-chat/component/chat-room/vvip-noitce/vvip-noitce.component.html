@@ -1,0 +1,14 @@
+<section id="vvip-notice"
+         appIsMobile
+         [ngClass]="themeCode">
+    <div *ngFor="let notice of vvipNoticeList"
+         [@springInOutAnimation]>
+        <div class="item">
+            <div class="level">{{notice.Level}}</div>
+            <div class="content-wrapper">
+                <div class="content"> {{notice.NickName}} Enter Room!</div>
+                <div class="trailing"></div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,10 @@
+<app-button-basic-round *ngIf="isHideChatRoom"
+                        matTooltip="显示面板"
+                        matTooltipPosition="left"
+                        (click)="toggleHidePanel()"
+                        [icon]="'visibility'"></app-button-basic-round>
+<app-button-basic-round *ngIf="!isHideChatRoom"
+                        matTooltip="隐藏面板"
+                        matTooltipPosition="left"
+                        (click)="toggleHidePanel()"
+                        [icon]="'visibility_off'"></app-button-basic-round>

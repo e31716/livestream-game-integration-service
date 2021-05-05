@@ -1,0 +1,8 @@
+<section id="switch-url-popup">
+    <div *ngFor="let item of videoSrcList"
+         (click)="emitUrlChange(item.Priority)"
+         [class]="{'selected': item.Priority === (currentVideo$ | async)}"
+         title="Switch Url{{item.Priority + 1}}">
+        Url {{item.Priority + 1}}
+    </div>
+</section>

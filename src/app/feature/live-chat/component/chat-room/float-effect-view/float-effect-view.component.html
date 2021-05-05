@@ -1,0 +1,13 @@
+<section id="float-effect-view"
+         #floatEffectView
+         appIsMobile>
+     <div *ngFor="let item of floatItemsContainer;let i=index;  trackBy:trackByFn;">
+          <div class="float-item"
+               appRandomFloatPath
+               [indexNumber]="i">
+               <div class="mask"
+                    appRandomBgColor
+                    [giftId]="1"></div>
+          </div>
+     </div>
+</section>

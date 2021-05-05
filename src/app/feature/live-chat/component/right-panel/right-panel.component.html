@@ -1,0 +1,16 @@
+<section id="right-panel"
+         appIsMobile>
+    <div class="back-to-lobby">
+        <app-button-back-lobby></app-button-back-lobby>
+    </div>
+    <div class="hide-paenl">
+        <app-button-basic-round (click)="toggleHidePanelPopup()"
+                                appMobileVisible="show"
+                                matTooltip="More Setting"
+                                matTooltipPosition="left"
+                                [icon]="'keyboard_arrow_left'"></app-button-basic-round>
+        <app-button-hide-panel appMobileVisible="hide"></app-button-hide-panel>
+    </div>
+    <app-hide-panel-popup *ngIf="isShowHidePanelPopup"
+                          (toggleHidePanel)="receiveHidePanel($event)"></app-hide-panel-popup>
+</section>

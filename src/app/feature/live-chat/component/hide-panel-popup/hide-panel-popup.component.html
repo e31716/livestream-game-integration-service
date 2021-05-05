@@ -1,0 +1,31 @@
+<div class="hide-anchor">
+    <button (click)="dispatchHideAnchor()">
+        <mat-icon>person_add_disabled</mat-icon>
+        Hide Anchor
+    </button>
+</div>
+<div class="hide-chat-room">
+    <button (click)="dispatchHideChatRoomDisplay()">
+        <span *ngIf="!isHideChatRoom">
+            <mat-icon>visibility_off</mat-icon>
+            Hide Panel
+        </span>
+        <span *ngIf="isHideChatRoom">
+            <mat-icon>visibility</mat-icon>
+            Show Panel
+        </span>
+    </button>
+</div>
+<div class="fullscreen-switch"
+     *ngIf="showFullScreenButton">
+    <button (click)="fullScreenSwitch()">
+        <span *ngIf="isFullScreen">
+            <mat-icon>fullscreen_exit</mat-icon>
+            Leave Full Screen
+        </span>
+        <span *ngIf="!isFullScreen">
+            <mat-icon>fullscreen</mat-icon>
+            Start Full Screen
+        </span>
+    </button>
+</div>

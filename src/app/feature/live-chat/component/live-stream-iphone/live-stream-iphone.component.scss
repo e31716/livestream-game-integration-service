@@ -1,0 +1,61 @@
+// @import '~video.js/dist/video-js.css';
+
+.loading-overlay {
+    position: relative;
+    height: 100%;
+    padding-top: 45%;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-align: center;
+    background-color: #000;
+    z-index: 1;
+
+    >div {
+        position: relative;
+        text-align: center;
+
+        mat-spinner {
+            margin-top: 20px;
+            display: inline-block;
+        }
+    }
+
+    .background {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        overflow: hidden;
+
+        img {
+            max-width: 100%;
+            display: block;
+            margin: auto;
+        }
+    }
+}
+
+
+.default {
+
+    #videoElement {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 0;
+        width: 100%;
+
+        >* {
+            display: none;
+        }
+
+        video {
+            display: block;
+            width: 100%;
+        }
+    }
+
+}

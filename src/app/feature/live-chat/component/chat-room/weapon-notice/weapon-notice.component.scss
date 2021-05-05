@@ -1,0 +1,147 @@
+:host {
+    .item {
+        position: relative;
+        display: inline-block;
+        border-radius: 5px;
+        padding: 2px 20px;
+        background: linear-gradient(to right, #cb32a8, #d6537f, #e0705b);
+        color: white;
+        text-shadow: #222 .5px .5px 1px;
+        overflow: hidden;
+
+        .content {
+            transform: translateX(-130%);
+            animation: textAnimate .4s .8s ease-out forwards;
+        }
+
+        .flash-animate {
+            content: '';
+            position: absolute;
+            border-radius: 5px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            transform: translateX(-100%);
+            animation: slide 1.3s 1.6s forwards;
+
+            .first-reflex,
+            .second-reflex,
+            .third-reflex,
+            .fourth-reflex {
+                background-color: rgba(255, 255, 255, 0.5);
+                position: absolute;
+                content: '';
+                top: 0;
+                bottom: 0;
+                transform: skewX(-20deg);
+                border: 3px solid #ffdd0021;
+                animation-duration: 2.5s;
+                animation-delay: 1s
+            }
+
+            .first-reflex {
+                width: 10px;
+                left: -20%;
+                animation-name: first-scale;
+            }
+
+            .second-reflex {
+                width: 10px;
+                left: 10%;
+                animation-name: second-scale;
+            }
+
+            .third-reflex {
+                width: 20px;
+                left: 30%;
+                animation-name: third-scale;
+            }
+
+            .fourth-reflex {
+                width: 30px;
+                left: 60%;
+                animation-name: fourth-scale;
+            }
+
+            // 文字左側滑入動畫
+            @keyframes textAnimate {
+                from {
+                    transform: translateX(-100%);
+                }
+
+                to {
+                    transform: translateX(0);
+                }
+            }
+
+            // 4個閃光同時右移的動畫
+            @keyframes slide {
+                from {
+                    transform: translateX(-100%);
+                }
+
+                to {
+                    transform: translateX(130%);
+                }
+            }
+
+            // 第1個閃光,縮放動畫(最左側）(小->大->小)
+            @keyframes first-scale {
+                0% {
+                    transform: skewX(-20deg);
+                }
+
+                40% {
+                    transform: skewX(-20deg);
+                    width: 30px;
+                }
+
+                70% {
+                    transform: skewX(-20deg);
+                    width: 10px;
+                }
+            }
+
+            // 第2道閃光,縮放動畫(大->小)
+            @keyframes second-scale {
+                from {
+                    transform: skewX(-20deg);
+                }
+
+                to {
+                    transform: skewX(-20deg);
+                    width: 5px;
+                }
+            }
+
+            // 第3道閃光,縮放動畫(大->小)
+            @keyframes third-scale {
+                from {
+                    transform: skewX(-20deg);
+                }
+
+                to {
+                    transform: skewX(-20deg);
+                    width: 30px;
+                }
+            }
+
+            // 第4道閃光,縮放動畫(大->小)
+            @keyframes fourth-scale {
+                from {
+                    transform: skewX(-20deg);
+                }
+
+                to {
+                    transform: skewX(-20deg);
+                    width: 2px;
+                }
+            }
+        }
+    }
+
+    &.is-mobile.default {
+        transform: scale(0.6) translate(-40%, -100%)
+    }
+}

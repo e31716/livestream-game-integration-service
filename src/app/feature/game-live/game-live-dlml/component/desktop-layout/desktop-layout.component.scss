@@ -1,0 +1,52 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .right-area {
+        position: relative;
+        background-color: #000;
+
+        &.hideAnchor {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: calc(100% * (328 / 1920)) !important;
+            height: calc(100% * (198 / 1080)) !important;
+            z-index: 1;
+            transform: translateX(-50%);
+            background-color: #000;
+
+            .show-anchor {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 25px;
+                height: 25px;
+                padding: 0;
+                border: none;
+                background: rgb(197, 197, 197);
+                color: rgb(66, 66, 66);
+                border-radius: 50%;
+                -webkit-box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.75);
+                -moz-box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.75);
+                box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.75);
+                z-index: 1;
+
+                mat-icon {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+
+    app-in-processing {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+    }
+}

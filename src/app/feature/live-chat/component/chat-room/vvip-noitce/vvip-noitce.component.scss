@@ -1,0 +1,131 @@
+$light-color : #f5d156;
+$item-height : 25px;
+
+#vvip-notice {
+    .item {
+        position: relative;
+        height: $item-height;
+        border-radius: 100px 0 0 100px;
+
+        .level {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 55px;
+            line-height: $item-height;
+            background-color: $light-color;
+            border-radius: 100px;
+            z-index: 2;
+            font-size: 13px;
+            font-weight: bold;
+            color: #885b1d;
+            animation: twinkling 1s infinite ease-in;
+
+            span {
+                margin-left: 2px;
+                font-size: 12px;
+                font-weight: bold;
+            }
+        }
+
+        .content-wrapper {
+            display: flex;
+
+
+            .content {
+                position: relative;
+                padding-left: 55px;
+                margin-left: 10px;
+                color: $light-color;
+                line-height: $item-height;
+                background-color: black;
+                font-size: 12px;
+                font-weight: 500;
+                white-space: nowrap;
+
+                &.content::before {
+                    position: absolute;
+                    content: '';
+                    height: 1px;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    background-color: $light-color;
+                }
+
+                &.content::after {
+                    position: absolute;
+                    content: '';
+                    height: 1px;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: $light-color;
+                }
+            }
+
+
+
+            .trailing {
+                position: relative;
+                height: $item-height;
+                width: 60px;
+                background: linear-gradient(to right, black, transparent);
+
+                &.trailing::before {
+                    position: absolute;
+                    content: '';
+                    height: 1px;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    background: linear-gradient(to right, $light-color, transparent);
+
+                }
+
+                &.trailing::after {
+                    position: absolute;
+                    content: '';
+                    height: 1px;
+                    left: 0px;
+                    right: 0;
+                    bottom: 0;
+                    background: linear-gradient(to right, $light-color, transparent);
+                }
+            }
+        }
+    }
+
+    &.is-mobile {
+        &.default {
+            transform: scale(0.8) translate(-15%, 200%);
+
+            .level {
+                width: 30px;
+            }
+
+            .content-wrapper {
+                .content {
+                    padding-left: 27px;
+                }
+            }
+        }
+    }
+}
+
+@keyframes twinkling {
+
+    0%,
+    100% {
+        filter: brightness(1.5);
+    }
+
+    50% {
+        filter: brightness(.95);
+    }
+
+}

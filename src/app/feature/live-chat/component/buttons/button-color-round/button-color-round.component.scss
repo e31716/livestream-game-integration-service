@@ -1,0 +1,51 @@
+@import 'var.scss';
+
+:host {
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        background: rgb(203, 50, 168);
+        background: -moz-linear-gradient(180deg, rgba(203, 50, 168, 1) 0%, rgba(224, 112, 91, 1) 100%);
+        background: -webkit-linear-gradient(180deg, rgba(203, 50, 168, 1) 0%, rgba(224, 112, 91, 1) 100%);
+        background: linear-gradient(180deg, rgba(203, 50, 168, 1) 0%, rgba(224, 112, 91, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cb32a8", endColorstr="#e0705b", GradientType=1);
+        cursor: pointer;
+
+        @include themify($themes) {
+            width: themed("button-size");
+            height: themed("button-size");
+            border: themed("button-border");
+            box-shadow: themed("button-shadow");
+            background: themed("button-bg-secondly");
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &.is-mobile {
+            @include themify($themes) {
+                width: themed("button-mobile-size");
+                height: themed("button-mobile-size");
+            }
+
+            mat-icon {
+                @include themify($themes) {
+                    font-size: themed("button-mobile-con-size");
+                }
+            }
+        }
+
+        mat-icon {
+            color: #fff;
+
+            @include themify($themes) {
+                font-size: themed("button-con-size");
+            }
+        }
+    }
+}

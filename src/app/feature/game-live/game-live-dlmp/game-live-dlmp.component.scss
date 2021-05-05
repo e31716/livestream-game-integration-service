@@ -1,0 +1,28 @@
+// Force user to rotate to landscape mode
+// more ways to implement by js: https://div.io/topic/1828
+app-force-rotate {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+}
+
+.content-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #000;
+    overflow: hidden;
+}
+
+app-mobile-layout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

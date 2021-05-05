@@ -1,0 +1,141 @@
+#gift-combo-view {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .small-gift-container {
+        position: absolute;
+        left: 0;
+        right: 0;
+        // bottom: 100px;
+        bottom: 0;
+        width: 100%;
+        height: 40px;
+
+        .gift-wrap {
+            position: absolute;
+            height: 40px;
+            padding: 0 7% 0 3%;
+            min-width: 60%;
+            display: flex;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                left: -10%;
+                width: 100%;
+            }
+
+            &::before {
+                top: -1px;
+                height: calc(100% + 2px);
+                background: linear-gradient(to right, rgba(255, 255, 255, 0.8), transparent 90%);
+            }
+
+            &::after {
+                height: 100%;
+                background: linear-gradient(to right, rgba(254, 148, 189, .8) 20%, rgba(173, 136, 186, .8) 30%, rgba(117, 196, 208, .8), 80%, transparent 100%);
+            }
+
+            >div {
+                display: flex;
+            }
+
+            .info {
+                position: relative;
+                height: 100%;
+                color: white;
+                font-size: 1rem;
+                font-weight: bold;
+                text-align: left;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-shadow: black 0.1em 0 0;
+                z-index: 2;
+
+                >* {
+                    width: 100%;
+                    height: 40%;
+                    line-height: 16px;
+                    vertical-align: middle;
+                    white-space: nowrap;
+                }
+
+                .gift-name {
+                    letter-spacing: .2rem;
+                }
+            }
+
+            .img-warp {
+                position: relative;
+                height: 100%;
+                width: 70px;
+                z-index: 2;
+
+                .main-img {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 90%;
+                    transform: translate(-50%, -50%);
+                }
+
+                .bg-img {
+                    position: relative;
+                    width: 100%;
+                    margin-top: -20%;
+                    animation: bg-rotation 2s linear infinite;
+                }
+            }
+
+            .number-combo {
+                position: relative;
+                font-family: Century Gothic;
+                font-size: 3rem;
+                font-weight: bold;
+                line-height: 40px;
+                color: #000;
+                text-shadow: -1px -1px 0 #fff,
+                    1px -1px 0 #fff,
+                    -1px 1px 0 #fff,
+                    1px 1px 0 #fff;
+                // animation: number-scales .2s linear;
+                z-index: 2;
+
+                span {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        &.is-mobile {
+            transform: scale(0.7) translateX(-20%);
+        }
+    }
+}
+
+/*動畫- 背景*/
+@keyframes bg-rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*動畫- 數字*/
+@keyframes number-scales {
+    0% {
+        top: -10px;
+        transform: scale(1.5);
+    }
+
+    100% {
+        top: 0;
+        transform: scale(1);
+    }
+}

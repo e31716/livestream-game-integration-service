@@ -1,0 +1,26 @@
+<div class="loading-overlay"
+     *ngIf="status !== 'playing'"
+     appIsMobile>
+    <div class="background">
+        <img src="assets/img/video-holder/girl-back-view.jpg">
+    </div>
+    <div *ngIf="status === 'loading'">
+        <div>Loading</div>
+        <mat-spinner appMobileVisible="hide"
+                     diameter='40'></mat-spinner>
+        <mat-spinner appMobileVisible="show"
+                     diameter='20'></mat-spinner>
+    </div>
+    <div *ngIf="status === 'error'">
+        Load Fail
+    </div>
+    <div *ngIf="status === 'network-error'">
+        Network Error
+    </div>
+</div>
+
+<video [ngClass]="themeCode"
+       id="videoElement"
+       allow="autoplay"
+       muted
+       appWidePhoneDevice></video>

@@ -1,0 +1,8 @@
+::ng-deep .notice-popup-custom-modalbox,
+::ng-deep .common-dialog-custom-modalbox {
+    mat-dialog-container {
+        background: rgba(255, 255, 255, .85);
+        color: #000;
+        border-radius: 15px;
+    }
+}

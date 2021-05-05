@@ -1,0 +1,82 @@
+#megaphone-bottom-sheet {
+    position: relative;
+    height: 75vh;
+    padding: 10px 17px 0;
+    overflow: hidden;
+    color: #fff;
+
+    .close-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: none;
+        border: none;
+        z-index: 1;
+
+        mat-icon {
+            color: #ccc;
+            font-size: 3rem;
+        }
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 35px;
+        left: 40px;
+        width: 100px;
+        height: 100px;
+        margin-left: -40px;
+        background-image: url('src/assets/img/megaphone/megaphone_voice.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.7));
+    }
+
+
+
+    textarea {
+        width: calc(100% - 100px);
+        margin: 30px 0 0 0;
+        padding: 10px;
+        border: 1px solid #b9b9b9;
+        resize: none;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 5px;
+        font-size: 2rem;
+        text-align: center;
+        float: right;
+
+        &:focus {
+            outline: 0;
+        }
+    }
+
+    button:not(.close-btn) {
+        width: 45%;
+        padding: 10px;
+        border: none;
+        border-radius: 50px;
+        margin: 20px 2.5%;
+        background: #fff;
+        color: #333;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, .2);
+        cursor: pointer;
+
+        &:focus {
+            outline: 0;
+        }
+
+        &.send {
+            background: linear-gradient(180deg, #cb32a8 0%, #e0705b 100%);
+            color: #fff;
+
+            &:disabled {
+                background: #999;
+                cursor: inherit;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,42 @@
+#chat-input-m {
+    display: flex;
+    height: 100%;
+    padding: 2px 0;
+    background-color: #fcfcfc;
+    border:1px solid #ccc; 
+    border-radius: 5px;
+
+    input {
+        flex-grow: 20;
+        padding: 0 8px;
+        color: #333;
+        font-size: 2.5rem;
+        background-color: transparent;
+        border: none;
+    }
+
+    input:focus,
+    button:focus {
+        outline: none !important;
+    }
+
+    button {
+        flex-grow: 1;
+        color: #333;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+        &.send {
+            position: absolute;
+            right: -40px;
+            top: 50%;
+            height:26px;
+            margin-top: -13px;
+            color: #ccc;
+        }
+        mat-icon {
+            font-size: 3rem;
+        }
+    }
+}

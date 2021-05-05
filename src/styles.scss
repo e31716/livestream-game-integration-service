@@ -1,0 +1,137 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@ctrl/ngx-emoji-mart/picker';
+@import '~@angular/material/theming';
+@import 'var.scss';
+$custom-typography: mat-typography-config($font-family: 'Microsoft JhengHei');
+@include angular-material-typography($custom-typography);
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: $overlayBg;
+}
+
+mat-icon {
+    font-size: 2.4rem;
+    // for vertical and horizontal center align
+    display: inline-flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+// Custom bottom sheet style
+.custom-bottom-sheet {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+// Megaphone bottom sheet style
+.megaphone-bottom-sheet {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+// 禮物bottom sheet
+.gift-bottom-sheet {
+    height: calc((100vw * 1/2.39) * 0.45);
+    position: absolute;
+    bottom: calc((100vh - (100vw * 1/2.39)) / 2);
+    right: 0px;
+    width: calc((100vw * 1/2.39) * 0.612) !important;
+    padding: 0 !important;
+    min-width: 0 !important;
+    background-color: transparent;
+    box-shadow: none !important;
+    overflow: hidden !important;
+}
+
+// style scroll bar
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: #e9e9e9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #bababa;
+}
+
+// don't show mat-icon until font is loaded, unless using a different font set
+:not(.material-icons-loaded) .mat-icon:not([fontSet]) {
+    display: none;
+}
+
+@media screen and (orientation:portrait) {
+
+    // CSS applied when the device is in portrait mode
+    app-force-landscape {
+        display: block;
+    }
+}
+
+@media screen and (orientation:landscape) {
+
+    // CSS applied when the device is in landscape mode
+    app-force-landscape {
+        display: none;
+    }
+}
+
+// RWD
+@media screen and (min-width: 1024px) {
+
+    // 如果使用者之視窗寬度 >= 1200px，將會再載入這裡的 CSS。
+    .mat-bottom-sheet-container {
+        width: 100vw;
+    }
+
+    // 主播資訊
+    .anchor-info-bottom-sheet {
+        bottom: calc((100vh - (100vw * 1/4.5)) / 2);
+    }
+}
+
+@media screen and (min-width: 667px) and (max-width: 1023px) {
+
+    // 如果使用者之視窗寬度介於 768px ~ 979px，將會再載入這裡的 CSS。
+    html {
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width: 667px) {
+
+    // 如果使用者之視窗寬度 <= 768px，將會再載入這裡的 CSS。
+    html {
+        font-size: 7px;
+    }
+}
+
+@media screen and (max-device-width: 480px) {
+
+    // 如果使用者之裝置寬度 <= 480px，將會再載入這裡的 CSS。
+
+}

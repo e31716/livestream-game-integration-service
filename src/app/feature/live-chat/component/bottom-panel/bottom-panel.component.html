@@ -1,0 +1,33 @@
+<section appIsMobile>
+    <div class="mobile-open-chat"
+         appMobileVisible="show"
+         *ngIf="!isHideChatRoom">
+        <app-button-basic-round class="open-chat"
+                                (click)="openChatAndGiftBottomSheet()"
+                                [icon]="'chat'"></app-button-basic-round>
+    </div>
+    <div class="switch-url">
+        <app-button-basic-round (click)="toggleSwitchUrlPopup()"
+                                matTooltip="切换线路"
+                                matTooltipPosition="left"
+                                [icon]="'wifi'"></app-button-basic-round>
+        <app-switch-url-popup *ngIf="isShowSwitchUrlPopup"
+                              (changeUrl)="switchUrl($event)"></app-switch-url-popup>
+    </div>
+    <div class="refresh">
+        <app-button-reload-video></app-button-reload-video>
+    </div>
+    <div class="volume">
+        <app-button-volume-control></app-button-volume-control>
+    </div>
+
+    <div class="gift"
+         *ngIf="!isHideChatRoom">
+        <span class="badge"
+              *ngIf="badge"></span>
+        <app-button-color-round (click)="isMobile ? openChatAndGiftBottomSheet() : toggleGiftPopup()"
+                                matTooltip="送礼"
+                                matTooltipPosition="left"
+                                [icon]="'card_giftcard'"></app-button-color-round>
+    </div>
+</section>

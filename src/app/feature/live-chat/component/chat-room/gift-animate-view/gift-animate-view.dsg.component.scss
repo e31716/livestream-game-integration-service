@@ -1,0 +1,42 @@
+#gift-animate-view {
+  .small-gift-container.dsg {
+    .img-warp {
+
+
+      .bg-img {
+        margin-left: -5vmax;
+        margin-top: -5vmax;
+        max-height: 10vmax;
+      }
+
+      .main-img {
+        left: 50%;
+        margin-left: -5vmax;
+        max-height: 10vmax;
+        transform: translate(0, -50%);
+      }
+    }
+  }
+
+  .small-gift-container.is-mobile.dsg {
+    top: 0;
+
+    .img-warp {
+      width: 100vw;
+      left: 0;
+
+      .bg-img {
+        margin-left: -10vmax;
+        margin-top: -10vmax;
+        max-height: 20vmax;
+      }
+
+      .main-img {
+        left: 50%;
+        margin-left: -11vmax;
+        max-height: 22vmax;
+        transform: translate(0, -50%);
+      }
+    }
+  }
+}

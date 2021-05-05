@@ -1,0 +1,27 @@
+<div id="poke-user-mag-box"
+     appIsMobile>
+     <div class="item-wrapper"
+          (click)="boxTagUser(item.NickName)">
+          <div *ngIf="item.IsAnchor"
+               class="anchor">
+               <span class="icon-headphone"></span>
+               <span class="vip-text">{{item.Level}}</span>
+          </div>
+          <span *ngIf="item.IsAnchor"
+                class="name anchor-name">{{item.NickName}}</span>
+
+          <span *ngIf="!item.IsAnchor"
+                class="name">你</span>
+          <div class="body"
+               [innerHtml]="item.Body"></div>
+          <img class="poke-icon"
+               src="assets/img/poke/poke.png">
+          <img *ngIf="item.IsAnchor"
+               class="poke-icon"
+               src="assets/img/poke/poke.png">
+          <img *ngIf="item.IsAnchor"
+               class="poke-icon"
+               src="assets/img/poke/poke.png">
+
+     </div>
+</div>

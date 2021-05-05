@@ -1,0 +1,18 @@
+<app-force-rotate appWhenToShow
+                  [device]="'mobile'"
+                  [orientation]="'landscape'"></app-force-rotate>
+
+<ng-container [ngSwitch]="isMobile">
+    <!-- Desktop/Mobile wrapper -->
+    <section class="content-wrapper"
+             *ngSwitchCase="false">
+        <app-desktop-layout [gameType]="gameType"
+                            [themeCode]="themeCode"
+                            [appKeepAspectRatio]="gameAspectRatioSetting.root.aspectRatio"
+                            [relativeTo]="gameAspectRatioSetting.root.relativeTo"
+                            [gameAspectRatioSetting]="gameAspectRatioSetting"></app-desktop-layout>
+    </section>
+    <app-mobile-layout *ngSwitchCase="true"
+                       [gameType]="gameType"
+                       [themeCode]="themeCode"></app-mobile-layout>
+</ng-container>

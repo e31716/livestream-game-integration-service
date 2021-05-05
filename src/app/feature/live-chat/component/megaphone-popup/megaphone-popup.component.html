@@ -1,0 +1,10 @@
+<div class="megaphone-popup">
+    <textarea placeholder="{{defaultValue}}"
+              maxlength="30"
+              rows="4"
+              [(ngModel)]="textValue"></textarea>
+    <button (click)="closePopup()">Cancel</button>
+    <button class="send"
+            [disabled]="!textValue"
+            (click)="sendTextarea()">Confirm</button>
+</div>

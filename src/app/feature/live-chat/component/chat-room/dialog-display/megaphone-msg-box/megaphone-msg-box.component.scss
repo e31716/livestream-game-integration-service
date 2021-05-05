@@ -1,0 +1,78 @@
+#megaphone-msg-box {
+    .item-wrapper {
+        position: relative;
+        display: inline-block;
+        padding: 3px 10px;
+        color: #fff;
+        background: linear-gradient(180deg, #a162f5 0%, #290177 100%);
+        border-radius: 5px;
+        line-height: 14px;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 150px;
+            display: block;
+            background-image: url('src/assets/img/megaphone/start.jpg');
+            opacity: .5;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        * {
+            display: inline-block;
+            font-size: 12px;
+            vertical-align: middle;
+        }
+
+        .name {
+            position: relative;
+            font-weight: bold;
+            color: #fff;
+            margin-left: 6px;
+            text-shadow: 1px 1px 2px #3b3b3b;
+        }
+
+        .body {
+            position: relative;
+            display: initial;
+            line-height: 14px;
+        }
+
+        .vip {
+            line-height: 12px;
+        }
+
+        .megaphone-icon {
+            position: relative;
+            display: inline-block;
+            height: 30px;
+            width: 30px;
+            margin: -7px;
+            margin-left: 1px;
+            margin-right: 1px;
+            background: url('src/assets/img/megaphone/megaphone.png') no-repeat;
+            background-size: auto 100%;
+        }
+    }
+
+    &.is-mobile {
+        .item-wrapper {
+            padding: 1px 5px;
+
+            &.default {
+                * {
+                    font-size: 1.3vw;
+                }
+
+                .megaphone-icon {
+                    height: 22px;
+                    width: 22px;
+                }
+            }
+        }
+    }
+}

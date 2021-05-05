@@ -1,0 +1,9 @@
+#vvip-notice {
+    &.is-mobile.dsg {
+        transform: scale(1) translate(0, 0);
+
+        .level {
+            width: 55px;
+        }
+    }
+}

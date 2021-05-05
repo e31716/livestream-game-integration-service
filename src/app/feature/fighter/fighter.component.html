@@ -1,0 +1,7 @@
+<app-fighter-splash-page *ngIf="showSplashScreen"
+                         [@fadeInOut]
+                         (sendprogressPrecent)="receiveprogressPrecent($event)"></app-fighter-splash-page>
+<app-game-live-dlml *ngIf="showGameLiveScreen"
+                    [gameType]="gameType"
+                    [themeCode]="themeCode"
+                    [gameAspectRatioSetting]="gameAspectRatioSetting"></app-game-live-dlml>

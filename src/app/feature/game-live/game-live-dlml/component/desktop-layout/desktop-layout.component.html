@@ -1,0 +1,20 @@
+<app-game-display *ngIf="inLandscape"
+                  [appKeepAspectRatio]="gameAspectRatioSetting.gameDisplay.aspectRatio"
+                  [relativeTo]="gameAspectRatioSetting.gameDisplay.relativeTo"
+                  [refreshTrigger]="hideAnchor"></app-game-display>
+
+<div class="right-area"
+     [ngClass]="{'hideAnchor': hideAnchor}"
+     [appKeepAspectRatio]="gameAspectRatioSetting.liveChat.aspectRatio"
+     [relativeTo]="gameAspectRatioSetting.liveChat.relativeTo">
+    <app-live-chat [gameType]="gameType"
+                   [themeCode]="themeCode"></app-live-chat>
+
+    <button *ngIf="hideAnchor"
+            class="show-anchor"
+            (click)="showAnchor()">
+        <mat-icon>open_in_full</mat-icon>
+    </button>
+</div>
+<app-in-processing *ngIf="showProcessing"
+                   [@fadeIn]></app-in-processing>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>LiveGame</title>
+  <base href="/">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <link rel="icon"
+        type="image/x-icon"
+        href="assets/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap"
+        rel="stylesheet">
+  <link href="assets/font/material-design-icons-3.0.2/material-icons.css"
+        rel="stylesheet">
+  <style>
+    #app-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body class="mat-typography">
+  <div id="app-wrapper"
+       class="theme-default">
+    <app-root>
+      <style type="text/css">
+        .splashPlaceholder {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          width: 100%;
+          background-color: #040712;
+        }
+
+        img {
+          max-width: 100%;
+        }
+      </style>
+      <div class="splashPlaceholder">
+        <img src="assets/img/generic-loading.gif">
+      </div>
+    </app-root>
+  </div>
+</body>
+
+</html>

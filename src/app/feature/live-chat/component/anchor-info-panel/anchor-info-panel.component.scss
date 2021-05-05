@@ -1,0 +1,167 @@
+@import 'var.scss';
+
+:host {
+    .anchor-info-popup {
+        position: relative;
+        left: 25px;
+        width: calc(100% - 50px);
+        min-height: 200px;
+        background: rgba(255, 255, 255, .97);
+        text-align: center;
+        padding: 7% 5%;
+
+        @include themify($themes) {
+            border: themed("button-border");
+            box-shadow: themed("button-shadow");
+        }
+
+        border-radius: 20px;
+        color: #333;
+
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        @each $gamebox in $avatar-list {
+            &.avatar_#{$gamebox} {
+                .anchorImg {
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 160%;
+                        height: 160%;
+                        // background: url('src/assets/img/avatar/avatar_#{$gamebox}.png');
+                        background-size: cover;
+                        z-index: 2;
+                    }
+                }
+            }
+        }
+
+        .anchorImg {
+            position: relative;
+            width: 6vw;
+            height: 6vw;
+            max-width: 95px;
+            max-height: 95px;
+            margin: auto;
+            margin-top: -20%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                overflow: hidden;
+
+                @include themify($themes) {
+                    border: themed("button-border");
+                    box-shadow: themed("button-shadow");
+                }
+            }
+        }
+
+        .name {
+            position: relative;
+            display: block;
+            width: 100%;
+            font-size: 1.5vw;
+            margin: 7% auto;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .count {
+            position: relative;
+            width: 100%;
+            display: flex;
+            text-align: center;
+            font-size: 1.2vw;
+
+            >span {
+                flex: 1;
+
+                mat-icon {
+                    vertical-align: middle;
+                    font-size: 1.6vw;
+                    width: auto;
+                    height: auto;
+                    margin-right: 2%;
+                }
+
+                &:nth-child(2) {
+                    mat-icon {
+                        color: #f5487d;
+                    }
+                }
+
+                &:nth-child(1) {
+                    mat-icon {
+                        color: #ffa500;
+                    }
+                }
+
+                >div {
+                    margin: 7% 0 7%;
+                    font-size: 1.5vw;
+                }
+            }
+
+        }
+
+        button {
+            position: relative;
+            width: 80%;
+            padding: 3% 0;
+            border-radius: 50px;
+            border: 0;
+            font-size: 1.2vw;
+            background: linear-gradient(180deg, #cb32a8 0%, #e0705b 100%);
+            color: #fff;
+            cursor: pointer;
+            margin: 7% 0 5%;
+
+            @include themify($themes) {
+                background: themed("button-bg-secondly");
+            }
+
+            &:focus {
+                outline: none;
+            }
+
+            &.unlike-anchor {
+                background: #eee;
+                color: #333;
+            }
+        }
+
+        &.is-mobile.default {
+            left: 10px;
+            width: calc(100% - 20px);
+            padding: 10px 5px;
+            min-height: 130px;
+
+            .name {
+                margin: 2% auto;
+            }
+
+            .count {
+                >span {
+                    >div {
+                        margin: 0;
+                    }
+                }
+            }
+
+            button {
+                margin: 7% 0 2%;
+            }
+        }
+    }
+}

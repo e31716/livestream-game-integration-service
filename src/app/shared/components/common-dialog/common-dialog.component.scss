@@ -1,0 +1,38 @@
+#common-dialog {
+
+    h1,
+    p {
+        font-weight: bold;
+    }
+
+    h1 {
+        font-size: 2rem;
+        position: relative;
+    }
+
+    p {
+        max-height: 100px;
+        overflow: auto;
+    }
+
+    .button-container {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-around;
+
+        .button {
+            width: 45%;
+            line-height: 30px;
+            border-radius: 50px;
+            background: #fff;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 1px 1px 3px #999;
+
+            &.ok-button {
+                background: linear-gradient(180deg, #cb32a8 0%, #e0705b 100%);
+                color: #fff;
+            }
+        }
+    }
+}

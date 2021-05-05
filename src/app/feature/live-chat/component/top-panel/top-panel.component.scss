@@ -1,0 +1,40 @@
+@import 'var.scss';
+
+:host {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    div {
+        position: relative;
+        margin-bottom: 10px;
+
+        button {
+            padding: 0;
+            border: none;
+            // color: $textColor;
+            // background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            cursor: pointer;
+
+            @include themify($themes) {
+                background-color: themed("primary-contrast-color");
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    mat-icon {
+        @include themify($themes) {
+            color: themed("primary-color");
+        }
+
+        padding-top: 2px;
+        font-size: 18px;
+    }
+}

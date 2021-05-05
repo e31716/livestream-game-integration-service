@@ -1,0 +1,20 @@
+.is-mobile {
+    &.dsg {
+        app-dialog-display {
+            width: calc(100% - 10px);
+            left: 10px;
+            right: 0;
+            bottom: 58vw;
+            height: 10%;
+        }
+
+        app-vvip-noitce {
+            position: absolute;
+            bottom: calc(32% + 15px);
+            left: 10px;
+            margin-bottom: 32%;
+        }
+
+    }
+
+}

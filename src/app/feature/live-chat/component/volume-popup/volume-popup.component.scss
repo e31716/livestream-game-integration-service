@@ -1,0 +1,50 @@
+@import 'var.scss';
+$textColor:#38373D;
+
+
+:host {
+    #volume-popup {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 7px 0;
+        background-color: rgba(255, 255, 255, 0.95);
+        border-radius: 5px;
+
+        @include themify($themes) {
+            border: themed("button-border");
+            box-shadow: themed("button-shadow");
+        }
+
+        mat-icon {
+            color: $textColor;
+            font-size: 2.3rem;
+            cursor: pointer;
+        }
+
+        ::ng-deep {
+            .mat-accent {
+
+                .mat-slider-track-fill,
+                .mat-slider-thumb,
+                .mat-slider-thumb-label {
+                    background-color: $textColor;
+                }
+
+                .mat-slider-thumb-label-text {
+                    color: #fff;
+                }
+            }
+
+            .mat-slider-vertical {
+                min-height: 90px;
+            }
+
+            .mat-slider-wrapper {
+                background-color: rgb(163, 163, 163);
+            }
+        }
+    }
+}

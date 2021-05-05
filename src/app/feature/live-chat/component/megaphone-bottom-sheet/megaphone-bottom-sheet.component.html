@@ -1,0 +1,14 @@
+<section id="megaphone-bottom-sheet">
+    <button class="close-btn"
+            (click)="closeBottomSheet()">
+        <mat-icon>close</mat-icon>
+    </button>
+    <textarea placeholder="{{defaultValue}}"
+              maxlength="30"
+              rows="4"
+              [(ngModel)]="textValue"></textarea>
+    <button (click)="closeBottomSheet()">取消</button>
+    <button class="send"
+            [disabled]="!textValue"
+            (click)="sendTextarea()">确认</button>
+</section>

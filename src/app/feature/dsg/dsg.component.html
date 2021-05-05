@@ -1,0 +1,7 @@
+<app-dsg-splash-page *ngIf="showSplashScreen"
+                     [@fadeInOut]
+                     (sendprogressPrecent)="receiveprogressPrecent($event)"></app-dsg-splash-page>
+<app-game-live-dlmp *ngIf="showGameLiveScreen"
+                    [gameType]="gameType"
+                    [themeCode]="themeCode"
+                    [gameAspectRatioSetting]="gameAspectRatioSetting"></app-game-live-dlmp>

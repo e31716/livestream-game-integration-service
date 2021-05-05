@@ -1,0 +1,16 @@
+<section id="splash-screen">
+     <img class="splash-bg"
+          src="assets/img/splash/fish/splash-bg-land.jpg">
+     <img *ngIf="showEnterButton"
+          class="splash-button"
+          src="assets/img/splash/enter-button.png"
+          (click)="enterToGame()">
+     <div class="bar-group"
+          *ngIf="!showEnterButton">
+          <div class="bar-container">
+               <div [ngStyle]="{'width.%':progressPrecent,'transition': '0.25s'}"
+                    class="bar-progress"></div>
+          </div>
+          <p class="content-text">加载中...{{ progressPrecent }}%</p>
+     </div>
+</section>

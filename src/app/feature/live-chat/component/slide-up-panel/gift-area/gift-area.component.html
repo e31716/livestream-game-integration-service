@@ -1,0 +1,28 @@
+<div id="gift-area">
+    <div class="gift-list">
+        <ul>
+            <li>
+                <span *ngFor="let g of giftListTotal"
+                      (click)="chooseGift(g)"
+                      [ngClass]="{'select': checkObjEqual(selectedGift, g)}"
+                      #giftItem>
+                    <div class="icon">
+                        <img src="assets/img/new-gift/{{g.Icon}}"
+                             onerror="this.src='assets/img/new-gift/icon/gift_default.png'">
+                    </div>
+                    <div class="gift-name">{{g.Name | giftName}}</div>
+                    <div class="gift-value">{{g.Value === 0 ? 'Free': ' ¥ '+ g.Value}}</div>
+
+                </span>
+            </li>
+        </ul>
+    </div>
+    <div class="send">
+        <button type="button"
+                (click)="sendGift()"
+                [disabled]="!selectedGift"
+                [ngClass]="{'disabled': !selectedGift}">
+            <div>Buy</div>
+        </button>
+    </div>
+</div>

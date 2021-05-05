@@ -1,0 +1,18 @@
+<div id="player-msg-box"
+     appIsMobile>
+      <div class="item-wrapper"
+           (click)="boxTagUser(item.NickName)"
+           [ngClass]="themeCode">
+            <div class="vip">
+                  <app-vip-rank [Rank]="item.Level"></app-vip-rank>
+            </div>
+            <span class="name">{{item.NickName}}</span>
+            <span *ngIf="!item.IsEmoji"
+                  class="body"
+                  [innerHtml]="item.Body">
+            </span>
+            <span *ngIf="item.IsEmoji"
+                  class="emoji"
+                  [ngStyle]="{'background-position': parseEmojiPosition(item.Body)}">
+            </span>
+      </div>

@@ -1,0 +1,27 @@
+<ng-container [ngSwitch]="isMobile">
+    <div *ngSwitchCase="true"
+         [ngClass]="themeCode">
+        <div class="more-menu">
+            <app-button-basic-round (click)="toggleMenuPopup()"
+                                    matTooltip="more setting"
+                                    matTooltipPosition="left"
+                                    [icon]="'more_horiz'"></app-button-basic-round>
+            <app-menu-popup *ngIf="isShowTopMenuPopup"
+                            appClickOutsild
+                            (clickOutside)="closeMenuPopup($event)"></app-menu-popup>
+        </div>
+        <ng-container *ngIf="!isHideChatRoom">
+            <div class="mobile-open-chat">
+                <app-button-basic-round class="open-chat"
+                                        (click)="openAloneChatPanel()"
+                                        [icon]="'chat'"></app-button-basic-round>
+            </div>
+            <div class="gift">
+                <app-button-gift></app-button-gift>
+            </div>
+        </ng-container>
+    </div>
+    <div *ngSwitchCase="false">
+        <app-right-panel></app-right-panel>
+    </div>
+</ng-container>

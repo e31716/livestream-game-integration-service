@@ -1,0 +1,54 @@
+@import 'var.scss';
+$textColor:#38373D;
+
+:host {
+    #switch-url-popup {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 2px;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.95);
+        border-radius: 5px;
+
+        @include themify($themes) {
+            border: themed("button-border");
+            box-shadow: themed("button-shadow");
+        }
+
+        div {
+            margin: 2px 0;
+            padding: 5px 8px;
+            color: $textColor;
+            font-size: 1.4rem;
+            border-radius: 5px;
+            cursor: pointer;
+
+            span {
+                color: $textColor;
+                font-weight: bold;
+            }
+
+            &.selected {
+                background-color: rgba(153, 153, 153, 0.26);
+                border: 1px solid #9F1059;
+
+
+                @include themify($themes) {
+                    color: themed("button-txt-color");
+                    background-color: themed("button-bg");
+                    border: themed("button-border");
+                    box-shadow: themed("button-shadow");
+                }
+
+            }
+
+            &:hover {
+                span {
+                    color: $textColor;
+                }
+            }
+        }
+    }
+}

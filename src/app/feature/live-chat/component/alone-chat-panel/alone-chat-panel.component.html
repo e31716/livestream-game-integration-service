@@ -1,0 +1,28 @@
+<section id="alone-chat-panel"
+         (click)="$event.stopPropagation()">
+    <div class="top-area"
+         (click)="closeChatPanel()">
+        ⌵
+    </div>
+    <div class="mid-area">
+        <app-dialog-display (sendTagUser)="addTag($event)"></app-dialog-display>
+    </div>
+    <div class="bottom-area">
+        <app-chat-input-m (emitEmojiPicker)="toggleEmojiPicker()"
+                          (emitChatMessage)="sendMessage($event)">
+        </app-chat-input-m>
+    </div>
+    <div class="emoji-mart-overlay"
+         *ngIf="showEmojiPicker"
+         (click)="toggleEmojiPicker(false)">
+        <emoji-mart set="emojione"
+                    (emojiSelect)="snedEmoji($event)"
+                    [include]="['people']"
+                    [isNative]="false"
+                    [sheetSize]="32"
+                    [showPreview]="false"
+                    [enableSearch]="false"
+                    [backgroundImageFn]="emojiBgImgParser()"
+                    [set]="'twitter'"></emoji-mart>
+    </div>
+</section>

@@ -1,0 +1,16 @@
+<div id="gift-mag-box"
+     appIsMobile>
+     <div class="item-wrapper"
+          appRandomBgColor
+          [giftId]="item.GiftId"
+          [ngClass]="themeCode">
+          <div class="vip">
+               <app-vip-rank [Rank]="item.Level"></app-vip-rank>
+          </div>
+          <span class="name">{{item.NickName}}</span>
+          <span class="gift-msg"> {{item.GiftName | giftName | giftAdContent}}
+               &nbsp;<img class="gift-icon"
+                    src="assets/img/new-gift/{{item.GiftUrl}}"
+                    onerror="this.src='assets/img/new-gift/icon/gift_default.png'"></span>
+     </div>
+</div>

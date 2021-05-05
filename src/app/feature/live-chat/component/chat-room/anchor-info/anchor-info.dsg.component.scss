@@ -1,0 +1,22 @@
+#anchor-info {
+    &.is-mobile {
+        &.dsg {
+            .info {
+
+                .first-floor {
+                    .name {
+                        font-size: 12px;
+                    }
+                }
+
+                .second-floor {
+                    font-size: 12px;
+                }
+            }
+
+            button {
+                font-size: 12px;
+            }
+        }
+    }
+}

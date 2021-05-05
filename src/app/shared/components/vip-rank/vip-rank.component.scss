@@ -1,0 +1,44 @@
+#vip-level {
+  .level-icon {
+    position: relative;
+    padding: 2px 7px;
+    border-radius: 5px;
+    line-height: 0;
+    transform: skewX(-10deg);
+    background: linear-gradient(to right, #686868 32%, #b1aeae 100%);
+    font-size: 12px;
+
+    &::before {
+      position: relative;
+      display: inline-block;
+      content: url('src/assets/img/vip/vip-diamond.svg');
+      width: 16px;
+      height: 16px;
+      margin: -1px;
+      margin-right: 4px;
+      vertical-align: middle;
+    }
+
+    .vip-text {
+      position: relative;
+      color: #fff;
+      vertical-align: middle;
+    }
+
+  }
+
+  &.is-mobile {
+    .level-icon {
+      &.default {
+        &::before {
+          width: 13px;
+          height: 13px;
+        }
+
+        * {
+          font-size: 1.3vw;
+        }
+      }
+    }
+  }
+}

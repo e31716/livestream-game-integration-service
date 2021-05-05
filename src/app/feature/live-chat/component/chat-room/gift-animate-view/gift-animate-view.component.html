@@ -1,0 +1,33 @@
+<section id="gift-animate-view">
+    <div id="giftCanvas"
+         class="giftCanvas"></div>
+    <div class="small-gift-container"
+         appIsMobile
+         [ngClass]="themeCode">
+        <div *ngFor="let notice of giftNoticeList"
+             [@inOutAnimation]>
+            <div class="gift-wrap">
+                <div class="info">
+                    <div class="name">
+                        {{notice.NickName}} 送了
+                    </div>
+                    <div class="gift-name">
+                        {{notice.GiftName | giftName }}
+                    </div>
+                </div>
+            </div>
+            <div class="img-warp"
+                 *ngIf="notice.GiftId !==-2">
+                <img class="bg-img"
+                     src="assets/img/bg_flash.png">
+                <img class="main-img"
+                     src="assets/img/new-gift/{{notice.GiftUrl}}">
+            </div>
+            <div class="img-warp"
+                 *ngIf="notice.GiftId ===-2">
+                <img class="main-img"
+                     src="assets/img/dessert/dessert_candy.png">
+            </div>
+        </div>
+    </div>
+</section>

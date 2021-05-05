@@ -1,0 +1,23 @@
+<div id="lottery-game"
+     appIsMobile
+     [ngClass]="themeCode">
+     <div class="imageContainer">
+          <img class="lotteryIcon"
+               [matTooltip]="matTooltipString"
+               matTooltipPosition="above"
+               [ngClass]="{'isActive':allowOpenLotteryGame}"
+               (click)="openLotteryGameView()"
+               src="assets/img/lottery-entrance.png">
+          <div class="background"
+               [ngClass]="{'isActive':allowOpenLotteryGame}">
+          </div>
+     </div>
+     <div class="countDown">
+          <countdown *ngIf="!allowOpenLotteryGame"
+                     #cd
+                     [config]="countdownConfig"
+                     (event)="handleCounterEvent($event)"></countdown>
+          <span class="ready"
+                *ngIf="allowOpenLotteryGame">Open</span>
+     </div>
+</div>

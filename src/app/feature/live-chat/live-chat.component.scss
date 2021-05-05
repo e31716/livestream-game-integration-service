@@ -1,0 +1,137 @@
+#live-chat {
+
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+
+    >div {
+        position: relative;
+        display: inline-block;
+        height: 100%;
+        vertical-align: top;
+        z-index: 2;
+
+    }
+
+    .stream {
+        width: 100%;
+
+        &.game-layer-top {
+            z-index: 3;
+        }
+
+        >* {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .bottom-penal {
+        position: absolute;
+        bottom: 8px;
+        right: 2%;
+        width: 30px;
+        height: auto;
+    }
+
+    .right-panel {
+        position: absolute;
+        top: 1.1%;
+        right: 2%;
+        width: 30px;
+        height: auto;
+    }
+
+    app-live-stream,
+    app-live-stream-iphone {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 100%;
+        z-index: 0;
+    }
+
+    app-slide-up-panel {
+        z-index: 2;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 40%;
+    }
+
+    app-social-share-panel {
+        z-index: 2;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 25%;
+    }
+
+    app-alone-chat-panel {
+        z-index: 2;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 50%;
+    }
+
+    app-anchor-info-panel,
+    app-megaphone-popup {
+        z-index: 2;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+    }
+
+    app-scratch-off-card {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 20;
+    }
+
+    // Mobile style 
+    &.is-mobile {
+        .stream {
+            width: 100%;
+        }
+
+        .penal {
+            position: absolute;
+            right: 9px;
+            bottom: 0;
+        }
+
+        app-social-share-panel {
+            height: 30%;
+        }
+    }
+
+    &.hide-anchor {
+
+        app-live-stream,
+        app-live-stream-iphone {
+            right: 20px;
+            left: 20px;
+        }
+
+        app-live-stream-iphone {
+            top: -42%;
+        }
+    }
+}
+
+
+// RWD
+@media screen and (min-width: 1280px) {}

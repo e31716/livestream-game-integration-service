@@ -1,0 +1,13 @@
+<app-force-rotate appWhenToShow
+                  [device]="'mobile'"
+                  [orientation]="'portrait'"></app-force-rotate>
+
+
+<!-- Desktop/Mobile wrapper -->
+<section class="content-wrapper">
+        <app-desktop-layout [gameType]="gameType"
+                            [themeCode]="themeCode"
+                            [appKeepAspectRatio]="hideAnchor ? getWindowAspectRatio() : gameAspectRatioSetting.root.aspectRatio"
+                            [relativeTo]="gameAspectRatioSetting.root.relativeTo"
+                            [gameAspectRatioSetting]="gameAspectRatioSetting"></app-desktop-layout>
+</section>

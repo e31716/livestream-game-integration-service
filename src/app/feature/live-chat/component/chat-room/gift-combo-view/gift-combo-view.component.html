@@ -1,0 +1,39 @@
+<section id="gift-combo-view">
+    <div class="small-gift-container"
+         appIsMobile
+         [ngClass]="themeCode">
+        <div *ngFor="let notice of giftNoticeList"
+             [@springInOutAnimation]>
+            <div class="gift-wrap"
+                 [@springInOutAnimation]>
+                <div class="info">
+                    <div class="name">
+                        {{notice.NickName}} 送了
+                    </div>
+                    <div class="gift-name">
+                        {{notice.GiftName | giftName }}
+                    </div>
+                </div>
+                <div *ngIf="notice.GiftId !==-2">
+                    <div class="img-warp">
+                        <img class="bg-img"
+                             src="assets/img/bg_flash.png">
+                        <img class="main-img"
+                             src="assets/img/new-gift/{{notice.GiftUrl}}">
+                    </div>
+                    <div class="number-combo"
+                         [@smallGiftInOutAnimation]
+                         *ngFor="let Count of giftComboCount">
+                        <span>x</span>{{Count}}
+                    </div>
+                </div>
+                <div *ngIf="notice.GiftId ===-2">
+                    <div class="img-warp">
+                        <img class="main-img"
+                             src="assets/img/dessert/dessert_candy.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

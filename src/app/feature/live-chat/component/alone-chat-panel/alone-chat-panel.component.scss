@@ -1,0 +1,52 @@
+$topAreaHeight:25px;
+$bottomAreaHeight:40px;
+
+#alone-chat-panel {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(31, 31, 31, 0.9);
+    position: relative;
+
+    .top-area {
+        height: $topAreaHeight;
+        width: 100%;
+        font-size: 18px;
+        color: white;
+        text-align: center;
+        line-height: $topAreaHeight;
+        cursor: pointer;
+    }
+
+    .mid-area {
+        position: relative;
+        height: calc(100% - 40px - 30px); // 減去上下的高
+        padding: 2%;
+    }
+
+    .bottom-area {
+        position: relative;
+        height: $bottomAreaHeight;
+
+        app-chat-input-m {
+            width: 88%;
+            height: 100%;
+            position: absolute;
+            left: 1%;
+        }
+    }
+
+    .emoji-mart-overlay {
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        z-index: 1;
+
+        emoji-mart {
+            position: absolute;
+            bottom: 56px;
+        }
+    }
+}

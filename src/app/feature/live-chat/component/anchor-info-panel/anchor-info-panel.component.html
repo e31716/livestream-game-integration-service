@@ -1,0 +1,30 @@
+<div class="anchor-info-popup avatar_moon"
+     appIsMobile
+     [ngClass]="themeCode">
+    <div class="close"
+         (click)="closePopup()">
+        <mat-icon>close</mat-icon>
+    </div>
+    <div class="anchorImg"><img [src]="anchorAvatarUrl"></div>
+    <span class="name">{{anchorName}}</span>
+    <div class="count">
+        <span class="like-count">
+            <span>Online User</span>
+            <div>
+                <mat-icon>account_circle</mat-icon>{{followCount}}
+            </div>
+        </span>
+        <span class="popularity">
+            <span>Popularity</span>
+            <div>
+                <mat-icon>stars</mat-icon>{{starValue}}
+            </div>
+        </span>
+    </div>
+    <button class="like-anchor"
+            *ngIf="canLike"
+            (click)="likeAnchor()">Like</button>
+    <button class="unlike-anchor"
+            *ngIf="!canLike"
+            (click)="unlikeAnchor()">Cancel</button>
+</div>

@@ -1,0 +1,11 @@
+<section id="chat-input">
+  <input maxlength="30"
+         #inputArea
+         [(ngModel)]="newChatMessage"
+         (keyup)="$event.keyCode == 13 && sendMessage()"
+         placeholder="赶快和主播互动吧！" />
+  <button class="emoji"
+          (click)="showEmojiPicker()">
+    <mat-icon>mood</mat-icon>
+  </button>
+</section>

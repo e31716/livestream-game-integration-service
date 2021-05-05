@@ -1,0 +1,12 @@
+<section id="notice-popup">
+    <h1 class="title">{{data.title}}</h1>
+    <p class="content"
+       [innerHTML]="data.content"></p>
+    <div class="button-container">
+        <div *ngIf="!!data.needCancelBtn"
+             class="button colse-button"
+             [mat-dialog-close]="false">Don't Show Again</div>
+        <div class="button ok-button"
+             [mat-dialog-close]="true">OK</div>
+    </div>
+</section>

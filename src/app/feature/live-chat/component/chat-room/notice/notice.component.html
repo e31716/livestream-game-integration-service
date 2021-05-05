@@ -1,0 +1,9 @@
+<section id="notice">
+    <div class="notice-item"
+         *ngFor="let notice of currentLikeList$ | async"
+         [@inOutAnimation]>
+        <div *ngIf="notice.IsLike">
+            {{notice.NickName}} Like {{anchorName}}
+        </div>
+    </div>
+</section>

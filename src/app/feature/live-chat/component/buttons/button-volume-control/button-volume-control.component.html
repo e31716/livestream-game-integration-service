@@ -1,0 +1,12 @@
+<app-button-basic-round (click)="toggleVolumePopup()"
+                        matTooltip="调整音量"
+                        matTooltipPosition="left"
+                        *ngIf="currentVolume > 0"
+                        [icon]="'volume_up'"></app-button-basic-round>
+<app-button-basic-round (click)="toggleVolumePopup()"
+                        matTooltip="调整音量"
+                        matTooltipPosition="left"
+                        *ngIf="currentVolume === 0"
+                        [icon]="'volume_mute'"></app-button-basic-round>
+<app-volume-popup *ngIf="isShowVolumePopup"
+                  (changeVolume)="receiveVolume($event)"></app-volume-popup>

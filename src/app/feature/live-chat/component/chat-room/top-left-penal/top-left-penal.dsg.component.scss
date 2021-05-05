@@ -1,0 +1,18 @@
+@import 'var.scss';
+
+:host {
+    .dsg {
+        padding: 10px;
+
+        >* {
+            @include themify($themes) {
+                width: themed("button-mobile-size");
+            }
+        }
+
+        app-anchor-info {
+            flex: 1;
+            padding: 0 10px;
+        }
+    }
+}

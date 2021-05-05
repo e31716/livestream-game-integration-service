@@ -1,0 +1,29 @@
+<div class="single-button"
+     (click)="$event.stopPropagation()">
+    <ul>
+        <li>
+            <app-button-hide-panel></app-button-hide-panel>
+            <p *ngIf="!isHideChatRoom">Hide Panel</p>
+            <p *ngIf="isHideChatRoom">Show Panel</p>
+        </li>
+        <li>
+            <app-button-reload-video></app-button-reload-video>
+            <p>Reload Network</p>
+        </li>
+        <li>
+            <app-button-volume-control></app-button-volume-control>
+            <p>Unmute</p>
+        </li>
+    </ul>
+</div>
+<section class="list-button">
+    <h3>
+        <mat-icon>wifi</mat-icon>Switch Network
+    </h3>
+    <div *ngFor="let item of videoSrcList"
+         (click)="emitUrlChange(item.Priority)"
+         [class]="{'selected': item.Priority === currentVideo}"
+         title="Reload Network{{item.Priority + 1}}">
+        <p>Line {{item.Priority + 1}}</p>
+    </div>
+</section>

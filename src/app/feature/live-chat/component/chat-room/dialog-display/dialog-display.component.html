@@ -1,0 +1,43 @@
+<section id="dialog-display"
+         #dialogDisplay
+         (scroll)="onScroll($event)"
+         [ngClass]="themeCode"
+         appIsMobile>
+  <div class="item"
+       *ngFor="let item of chatMessageList; trackBy:trackByFn"
+       [@slideEnterAnimation]>
+    <!-- 玩家訊息組件 -->
+    <app-player-msg-box *ngIf="msgCategory('player',item)"
+                        [item]="item"
+                        (sendTagUserFromBox)="tagUser($event)"></app-player-msg-box>
+    <!-- 主播訊息組件 -->
+    <app-anchor-msg-box *ngIf="msgCategory('anchor',item)"
+                        [item]="item"
+                        (sendTagUserFromBox)="tagUser($event)"></app-anchor-msg-box>
+    <!-- 送禮訊息組件 -->
+    <app-gift-msg-box *ngIf="msgCategory('gift',item)"
+                      [item]="item"></app-gift-msg-box>
+    <!-- 提示組件 -->
+    <app-notice-msg-box *ngIf="msgCategory('notice',item)"
+                        [item]="item"
+                        (sendTagUserFromBox)="tagUser($event)"></app-notice-msg-box>
+    <!-- 點心訊息組件 -->
+    <app-dessert-msg-box *ngIf="msgCategory('dessert',item)"
+                         [item]="item"
+                         (sendTagUserFromBox)="tagUser($event)"></app-dessert-msg-box>
+    <!-- 大聲公訊息組件 -->
+    <app-megaphone-msg-box *ngIf="msgCategory('megaphone',item)"
+                           [item]="item"
+                           (sendTagUserFromBox)="tagUser($event)"></app-megaphone-msg-box>
+    <!-- 戳戳樂訊息 -->
+    <app-poke-user-msg-box *ngIf="msgCategory('pokeUser',item)"
+                           [item]="item"
+                           (sendTagUserFromBox)="tagUser($event)"></app-poke-user-msg-box>
+  </div>
+  <div *ngIf="showScrollBtn"
+       class="scrollBtn"
+       (click)="clickScrollToBottom()"
+       [@inOutAnimation]>
+    查看新留言<mat-icon>keyboard_arrow_down</mat-icon>
+  </div>
+</section>

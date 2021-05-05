@@ -1,0 +1,48 @@
+@import 'var.scss';
+
+:host {
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+
+        @include themify($themes) {
+            width: themed("button-size");
+            height: themed("button-size");
+            background-color: themed("button-bg");
+            border: themed("button-border");
+            box-shadow: themed("button-shadow");
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &.is-mobile {
+            @include themify($themes) {
+                width: themed("button-mobile-size");
+                height: themed("button-mobile-size");
+
+            }
+
+            mat-icon {
+                @include themify($themes) {
+                    color: themed("primary-color");
+                    font-size: themed("button-mobile-con-size");
+                }
+            }
+        }
+
+        mat-icon {
+            @include themify($themes) {
+                color: themed("primary-color");
+                font-size: themed("button-con-size");
+            }
+        }
+    }
+}

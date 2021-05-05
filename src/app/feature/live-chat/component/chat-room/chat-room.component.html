@@ -1,0 +1,37 @@
+<div [ngSwitch]="isHideChatRoom"
+     appIsMobile
+     [ngClass]="themeCode"
+     #chatRoom>
+  <ng-container *ngSwitchCase="true"></ng-container>
+  <ng-container *ngSwitchDefault>
+    <app-top-left-penal></app-top-left-penal>
+    <app-notice-container></app-notice-container>
+    <app-lottery-game-entrance *ngIf="canActiveLotteryGame"></app-lottery-game-entrance>
+    <app-vvip-noitce></app-vvip-noitce>
+    <app-dialog-display *ngIf="!isShowAloneChatPanel"
+                        (sendTagUser)="addTag($event)"
+                        [giftMessageNewlineInMobile]="true"></app-dialog-display>
+    <div class="emoji-mart-overlay"
+         *ngIf="isShowEmojiPicker"
+         appMobileVisible="hide"
+         (click)="toggleEmojiPicker(false)">
+      <emoji-mart set="emojione"
+                  (emojiSelect)="addEmoji($event)"
+                  [include]="['people']"
+                  [isNative]="false"
+                  [sheetSize]="32"
+                  [showPreview]="false"
+                  [enableSearch]="false"
+                  [backgroundImageFn]="emojiBgImgParser()"
+                  [set]="'twitter'"></emoji-mart>
+    </div>
+    <app-chat-input appMobileVisible="hide"
+                    (emitEmojiPicker)="toggleEmojiPicker()"
+                    (emitChatMessage)="sendMessage($event)"></app-chat-input>
+    <app-gift-animate-view></app-gift-animate-view>
+  </ng-container>
+  <app-game-display *ngIf="buildinGameDisplay"
+                    [hidden]="isHideChatRoom"
+                    [ngClass]="{'game-layer-top': gameLayerTop,'event-penetrate': hasPopupShow}">
+  </app-game-display>
+</div>

@@ -1,0 +1,24 @@
+<section id="gift-panel-m">
+    <div class="gift-list">
+        <div class="list-wrapper">
+            <span *ngFor="let g of giftListTotal"
+                  matTooltipPosition="above"
+                  (click)="chooseGift(g)"
+                  [ngClass]="{'select': checkObjEqual(selectedGift, g)}">
+                <div class="icon">
+                    <img src="assets/img/new-gift/{{g.Icon}}"
+                         onerror="this.src='assets/img/new-gift/icon/gift_default.png'">
+                </div>
+                ¥{{g.Value}}
+            </span>
+        </div>
+    </div>
+    <div class="send">
+        <button type="button"
+                (click)="sendGift()"
+                [disabled]="!selectedGift"
+                [ngClass]="{'disabled': !selectedGift}">
+            <span>Buy</span>
+        </button>
+    </div>
+</section>

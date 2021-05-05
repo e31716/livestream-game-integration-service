@@ -1,0 +1,34 @@
+.dsg {
+
+    #videoElement {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 0;
+        height: 100%;
+
+        >* {
+            display: none;
+        }
+
+        video {
+            display: block;
+            height: 100%;
+        }
+    }
+
+    &.wide-phone-device {
+        #videoElement {
+
+            width: 100%;
+            height: auto;
+
+            video {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+}

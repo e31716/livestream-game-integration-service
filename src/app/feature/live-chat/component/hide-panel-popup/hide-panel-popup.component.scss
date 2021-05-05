@@ -1,0 +1,42 @@
+$textColor: #38373D;
+
+:host {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 1% 20%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+
+    >div {
+        button {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: $textColor;
+            border: none;
+            background: none;
+            cursor: pointer;
+
+            &:focus {
+                outline: none;
+            }
+
+            span {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+    mat-icon {
+        color: $textColor;
+        font-size: 2rem;
+        width: 28px;
+        height: 28px;
+    }
+}

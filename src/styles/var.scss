@@ -1,0 +1,58 @@
+$overlayBg: #000;
+$overlayTextColor: #fff;
+
+// 頭像樣式列表
+$avatar-list:moon,
+moon2,
+bubble;
+
+$themes: ( // Themes for different games
+    default: ( // Default theme
+        primary-color: #38373D,
+        primary-contrast-color: rgba(255, 255, 255, 0.8),
+        button-size: 30px,
+        button-con-size: 15px,
+        button-mobile-size: 30px,
+        button-mobile-con-size: 15px,
+        button-bg:rgba(255, 255, 255, 0.8),
+        button-bg-secondly:linear-gradient(180deg, rgba(203, 50, 168, 1) 0%, rgba(224, 112, 91, 1) 100%)),
+
+    dsg: ( // Game Theme for DSG 
+        primary-color: rgb(255, 243, 234),
+        primary-contrast-color: rgba(125, 71, 33, 0.8),
+        button-size: 38px,
+        button-con-size: 18px,
+        button-mobile-size: 38px,
+        button-mobile-con-size: 18px,
+        button-bg:rgba(152, 95, 0, .85),
+        button-bg-secondly:linear-gradient(180deg, rgba(203, 50, 168, 1) 0%, rgba(224, 112, 91, 1) 100%),
+        button-txt-color:#fff,
+        button-border:2px solid #78430f,
+        button-shadow:(0px 1px 0 1px rgb(0 0 0 / 0.3), rgba(252, 180, 97, 0.95) 0 0 10px 0px inset)),
+);
+
+@mixin themify($themes: $themes) {
+
+    @each $theme,
+    $map in $themes {
+
+        .theme-#{$theme} & {
+            $theme-map: () !global;
+
+            @each $key,
+            $submap in $map {
+                $value: map-get(map-get($themes, $theme), '#{$key}');
+                $theme-map: map-merge($theme-map, ($key: $value)) !global;
+            }
+
+            @content;
+            // clean global var $theme-map
+            $theme-map: null !global;
+        }
+
+    }
+}
+
+@function themed($key) {
+    @return map-get($theme-map, $key);
+}

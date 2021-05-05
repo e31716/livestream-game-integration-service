@@ -1,0 +1,178 @@
+#bottom-sheet {
+    position: relative;
+    height: 75vh;
+    padding: 10px 17px 0;
+    overflow: hidden;
+    color: #fff;
+
+    .close-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: none;
+        border: none;
+        z-index: 1;
+
+        mat-icon {
+            color: #ccc;
+            font-size: 3rem;
+        }
+    }
+
+    .middle-area {
+        position: relative;
+        height: 80%;
+        margin-bottom: 1%;
+
+        >* {
+            position: relative;
+            display: inline-flex;
+            height: 100%;
+            padding: 5px 5px 10px;
+            vertical-align: top;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+
+            legend {
+                color: #ccc;
+                font-size: 2rem;
+
+                >* {
+                    display: inline-block;
+                    vertical-align: top;
+                }
+
+                mat-icon {
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        .left-area {
+            width: 60%;
+
+            app-dialog-display {
+                position: absolute;
+                width: 100%;
+                height: calc(100% - 35px);
+                top: 28px;
+            }
+        }
+
+        .right-area {
+            width: 35%;
+            flex-direction: column;
+            height: calc(100% - 40px);
+            vertical-align: bottom;
+            padding: 0px;
+
+            .top-range {
+                height: 30px;
+                margin-top: -30px;
+                margin-left: -1px;
+                line-height: 29px;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                border-bottom: none;
+                border-radius: 5px 5px 0px 0px;
+                width: calc(100% + 2px);
+
+                ul {
+                    list-style: none;
+                    display: flex;
+                    padding: 0;
+                    margin: 0;
+
+                    li {
+                        flex: 1;
+                        text-align: center;
+
+                        .badge {
+                            position: relative;
+
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                right: -8px;
+                                top: -3px;
+                                width: 8px;
+                                height: 8px;
+                                border-radius: 8px;
+                                background-color: red;
+                            }
+                        }
+
+                        &.active {
+                            background: rgba(255, 255, 255, 0.5);
+                        }
+                    }
+                }
+            }
+
+            .area-box {
+                height: 100%;
+                overflow: auto;
+
+                &::-webkit-scrollbar-thumb {
+                    background: transparent;
+                }
+
+                &::-webkit-scrollbar-thumb:hover {
+                    background: transparent;
+                }
+            }
+
+            app-gift-panel-m {
+                width: 100%;
+            }
+
+
+        }
+    }
+
+    .emoji-mart-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        z-index: 1;
+
+        emoji-mart {
+            position: absolute;
+            bottom: 15%;
+        }
+    }
+
+    .bottom-area {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 15%;
+
+        app-chat-input-m {
+            // width: calc(100% - 40px);
+            width: 96%;
+            height: 90%;
+            position: absolute;
+            left: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 568px) {
+    #bottom-sheet {
+        .middle-area {
+            .right-area {
+                height: calc(100% - 20px);
+
+                .top-range {
+                    height: 20px;
+                    margin-top: -20px;
+                    line-height: 19px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+<div id="volume-popup">
+    <mat-icon (click)="goToVolume('max')"
+              matTooltip="Max"
+              matTooltipPosition="above">volume_up</mat-icon>
+    <mat-slider [max]="100"
+                [min]="0"
+                [step]="1"
+                [thumbLabel]="true"
+                [vertical]="true"
+                [(ngModel)]="currentVolume"
+                (change)="getVolume()">
+    </mat-slider>
+    <mat-icon (click)="goToVolume('min')"
+              matTooltip="Mute"
+              matTooltipPosition="below">volume_mute</mat-icon>
+</div>

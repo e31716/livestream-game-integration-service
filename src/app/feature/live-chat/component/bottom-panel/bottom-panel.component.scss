@@ -1,0 +1,97 @@
+@import 'var.scss';
+
+$textColor: #38373D;
+
+:host {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    div {
+        position: relative;
+        margin: 2px 0 2px 0;
+
+        button {
+            width: 30px;
+            height: 30px;
+            padding: 0;
+            border: none;
+            // color: $textColor;
+            // background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            cursor: pointer;
+
+            @include themify($themes) {
+                background-color: themed("primary-contrast-color");
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    .gift {
+        position: relative;
+
+        .badge {
+            position: absolute;
+            right: -3px;
+            top: -3px;
+            width: 8px;
+            height: 8px;
+            border-radius: 8px;
+            background-color: red;
+        }
+    }
+
+    mat-icon {
+        @include themify($themes) {
+            color: themed("primary-color");
+        }
+
+        padding-top: 2px;
+        font-size: 1.8rem;
+    }
+
+    // All popups
+    app-volume-popup,
+    app-switch-url-popup {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translateY(-102%);
+    }
+
+    app-volume-popup {
+        width: 100%;
+    }
+
+    app-switch-url-popup {
+        width: 250%;
+    }
+
+    // For mobile
+    &.is-mobile {
+        app-switch-url-popup {
+            transform: translate(-43%, -72%);
+        }
+    }
+}
+
+// RWD
+@media screen and (min-width: 1280px) {
+
+    // 如果使用者之視窗寬度 >= 1200px，將會再載入這裡的 CSS。
+    #bottom-panel {
+        >div {
+
+            button {
+                width: 35px;
+                height: 35px;
+            }
+        }
+    }
+}

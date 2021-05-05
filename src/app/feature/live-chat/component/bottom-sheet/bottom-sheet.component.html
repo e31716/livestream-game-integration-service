@@ -1,0 +1,53 @@
+<section id="bottom-sheet"
+         [ngClass]="themeCode">
+    <button class="close-btn"
+            (click)="closeBottomSheet()">
+        <mat-icon>close</mat-icon>
+    </button>
+    <div class="middle-area">
+        <fieldset class="left-area">
+            <legend>
+                <mat-icon>chat</mat-icon>
+                <span>聊天室</span>
+            </legend>
+            <app-dialog-display (sendTagUser)="addTag($event)"></app-dialog-display>
+        </fieldset>
+        <fieldset class="right-area">
+            <!-- <legend>
+                <mat-icon>card_giftcard</mat-icon>
+                <span>送礼</span>
+            </legend> -->
+            <div class="top-range">
+                <ul>
+                    <li *ngFor="let list of areaList"
+                        [ngClass]="{'active': isActive === list.area}"
+                        (click)="changeTab(list.area)"><span class="name"
+                              [ngClass]="{'badge':list.badge}">{{list.name}}</span></li>
+                </ul>
+            </div>
+            <div class="area-box">
+                <app-gift-panel-m (emitGift)="sendGift($event)"
+                                  *ngIf="isActive === 'gift-area'"></app-gift-panel-m>
+                <app-dessert-area *ngIf="isActive === 'dessert-area'"></app-dessert-area>
+            </div>
+        </fieldset>
+    </div>
+    <div class="emoji-mart-overlay"
+         *ngIf="showEmojiPicker"
+         (click)="toggleEmojiPicker(false)">
+        <emoji-mart set="emojione"
+                    (emojiSelect)="addEmoji($event)"
+                    [include]="['people']"
+                    [isNative]="false"
+                    [sheetSize]="32"
+                    [showPreview]="false"
+                    [enableSearch]="false"
+                    [backgroundImageFn]="emojiBgImgParser()"
+                    [set]="'twitter'"></emoji-mart>
+    </div>
+    <div class="bottom-area">
+        <app-chat-input-m (emitEmojiPicker)="toggleEmojiPicker()"
+                          (emitChatMessage)="sendMessage($event)">
+        </app-chat-input-m>
+    </div>
+</section>

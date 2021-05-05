@@ -1,0 +1,17 @@
+<section id="weapon-notice"
+         appIsMobile
+         [ngClass]="themeCode">
+    <div *ngFor="let notice of weaponSentSuccessList$ | async"
+         [@springInOutAnimation]>
+        <div class="item"
+             [@springInOutAnimation]>
+            <div class="content"> {{notice.PlayerName}} Get Weapon {{notice.WeaponName}}!</div>
+            <div class="flash-animate">
+                <div class="first-reflex"></div>
+                <div class="second-reflex"></div>
+                <div class="third-reflex"></div>
+                <div class="fourth-reflex"></div>
+            </div>
+        </div>
+    </div>
+</section>

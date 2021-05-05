@@ -1,0 +1,142 @@
+#gift-animate-view {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  // background-color: cadetblue;
+
+  .giftCanvas {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: -40%;
+  }
+
+  .small-gift-container {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    .gift-wrap {
+      position: absolute;
+      height: 100%;
+      max-width: 40%;
+      padding: 0 7% 0 3%;
+      background: linear-gradient(to right, rgba(254, 148, 189, .9) 20%, rgba(173, 136, 186, .9) 30%, rgba(117, 196, 208, .9), 80%, transparent 100%);
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        height: 2px;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.8), transparent 90%);
+        left: 0;
+        right: 0;
+      }
+
+      &::after {
+        bottom: 0;
+      }
+
+      .info {
+        position: relative;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        font-size: 12px;
+        font-weight: bold;
+        color: white;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-shadow: black 0.1em 0 0;
+        overflow: hidden;
+
+        >* {
+          height: 40%;
+          width: 100%;
+          line-height: 16px;
+          vertical-align: middle;
+          white-space: nowrap;
+        }
+
+        .name {}
+
+        .gift-name {
+          letter-spacing: .2rem;
+        }
+      }
+
+
+
+    }
+
+    .img-warp {
+      animation: scales 1s ease-in-out 1;
+      position: absolute;
+      height: 100%;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+
+      .main-img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        max-height: 6vmax;
+        transform: translate(-50%, -50%);
+      }
+
+      .bg-img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -4vmax;
+        margin-top: -4vmax;
+        max-height: 8vmax;
+        animation: rotation 2s linear 2
+      }
+
+    }
+  }
+
+}
+
+/*動畫- 背景*/
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/*動畫- 禮物*/
+@keyframes scales {
+  0% {
+    transform: scale(.5);
+  }
+
+  25% {
+    transform: scale(1.5);
+  }
+
+  50% {
+    transform: scale(.7);
+  }
+
+  75% {
+    transform: scale(1.3);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

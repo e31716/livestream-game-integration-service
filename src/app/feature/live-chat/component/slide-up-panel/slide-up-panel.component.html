@@ -1,0 +1,16 @@
+<section id="slide-up-panel">
+    <div class="top-range">
+        <ul>
+            <li *ngFor="let list of areaList"
+                [ngClass]="{'active': isActive === list.area}"
+                (click)="changeTab(list.area)">
+                <span class="name"
+                      [ngClass]="{'badge':list.badge}">{{list.name}}</span>
+            </li>
+        </ul>
+    </div>
+    <div class="area-box">
+        <app-gift-area *ngIf="isActive ==='gift-area'"></app-gift-area>
+        <app-dessert-area *ngIf="isActive === 'dessert-area'"></app-dessert-area>
+    </div>
+</section>

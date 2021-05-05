@@ -1,0 +1,50 @@
+<div id="dessert-area"
+     appIsMobile
+     [ngClass]="themeCode">
+    <div class="event-area">
+        <h3>{{dessertDescription}}</h3>
+        <div class="event-box">
+            <div class="icon">
+                <circle-progress *ngIf="dessertTask.isActive === false"
+                                 [percent]="calcDessertPercent()"
+                                 [radius]="28"
+                                 [outerStrokeWidth]="4"
+                                 [innerStrokeWidth]="4"
+                                 [space]="-4"
+                                 [titleFontSize]="14"
+                                 [title]="dessertTask.remainTime"></circle-progress>
+                <img src="assets/img/dessert/dessert_candy.png">
+            </div>
+            <div class="content">
+                <p>Send dessert to ancher now&nbsp;<span class="red">❤</span></p>
+            </div>
+            <div class="send">
+                <button (click)="sendDessertMsg()"
+                        [disabled]="dessertTask.isActive === false">Send</button>
+            </div>
+        </div>
+    </div>
+    <div class="event-area">
+        <h3>{{megaphoneDescription}}</h3>
+        <div class="event-box">
+            <div class="icon">
+                <circle-progress *ngIf="megaphoneTask.isActive === false"
+                                 [percent]="calcMegaPhonePercent()"
+                                 [radius]="28"
+                                 [outerStrokeWidth]="4"
+                                 [innerStrokeWidth]="4"
+                                 [space]="-4"
+                                 [titleFontSize]="14"
+                                 [title]="megaphoneTask.remainTime"></circle-progress>
+                <img src="assets/img/megaphone/megaphone.png">
+            </div>
+            <div class="content">
+                <p>Everyone can here you!</p>
+            </div>
+            <div class="send">
+                <button (click)="isMobile ? openMegaphoneBottomSheet() : toggleMegaphonePopup()"
+                        [disabled]="megaphoneTask.isActive === false">Use</button>
+            </div>
+        </div>
+    </div>
+</div>

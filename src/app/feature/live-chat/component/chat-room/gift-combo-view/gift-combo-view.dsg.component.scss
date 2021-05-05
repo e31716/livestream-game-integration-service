@@ -1,0 +1,13 @@
+#gift-combo-view {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .small-gift-container {
+        &.is-mobile.dsg {
+            top: 0;
+            bottom: auto;
+            transform: scale(1) translateX(0);
+        }
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "dsg": {
+        "Token": "",
+        "AnchorId": "",
+        "LobbyUrl": "",
+        "GameUrl": "",
+        "Code": 0,
+        "AllowSendGift": true
+    },
+    "fish": {
+        "Token": "",
+        "AnchorId": "",
+        "LobbyUrl": "",
+        "GameUrl": "",
+        "Code": 0,
+        "AllowSendGift": true
+    },
+    "fighter": {
+        "Token": "",
+        "AnchorId": "",
+        "LobbyUrl": "",
+        "GameUrl": "",
+        "Code": 0,
+        "AllowSendGift": true
+    },
+    "player": {
+        "Id": "",
+        "Name": "",
+        "ExternalId": "",
+        "OnlineAnchorId": "",
+        "OnlineAnchorName": "",
+        "CanLike": false,
+        "Code": 0
+    },
+    "lobbyurl": {},
+    "config": {
+        "CdnPath": "",
+        "LsgFrontendUIStyle": "1"
+    }
+}

@@ -1,0 +1,19 @@
+@import 'var.scss';
+
+:host {
+    position: relative;
+
+    .badge {
+        position: absolute;
+
+        @include themify($themes) {
+            left: themed("button-mobile-size")-7;
+        }
+
+        top: -3px;
+        width: 8px;
+        height: 8px;
+        border-radius: 8px;
+        background-color: red;
+    }
+}

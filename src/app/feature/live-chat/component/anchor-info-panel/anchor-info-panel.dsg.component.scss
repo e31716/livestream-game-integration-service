@@ -1,0 +1,38 @@
+@import 'var.scss';
+
+:host {
+    .anchor-info-popup {
+        &.is-mobile {
+            &.dsg {
+
+                .name {
+                    font-size: 5vw;
+                }
+
+                .count {
+                    font-size: 4vw;
+
+                    >span {
+                        mat-icon {
+                            font-size: 6.5vw;
+                        }
+
+                        >div {
+                            font-size: 6.5vw;
+                        }
+                    }
+                }
+
+                .anchorImg {
+                    width: 20vw;
+                    height: 20vw;
+                }
+
+                button {
+                    font-size: 4vw;
+
+                }
+            }
+        }
+    }
+}

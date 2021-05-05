@@ -1,0 +1,20 @@
+#vip-level {
+    .level-icon {
+        position: relative;
+        width: 62px;
+        height: 28px;
+        background-image: url('src/assets/img/vip/vip-level.png');
+        background-position: -10px -10px;
+
+        .vip-text {
+            position: absolute;
+            // right: 8px;
+            color: #fff;
+            font-size: 1.7rem;
+            line-height: 28px;
+            right: 5px;
+            width: 23px;
+            text-align: center;
+        }
+    }
+}

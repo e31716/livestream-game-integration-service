@@ -1,0 +1,49 @@
+<section id="live-chat"
+         #liveChat
+         appIsMobile
+         [ngClass]="{'hide-anchor': hideAnchor}">
+     <div class="stream"
+          *ngIf="!hideAnchor"
+          [ngClass]="{'game-layer-top': isMobile && gameLayerTop && themeCode === gameTypeEnum.DSG} ">
+          <app-chat-room></app-chat-room>
+     </div>
+     <div class="right-panel"
+          *ngIf="!hideAnchor">
+          <app-right-panel *ngIf="themeCode === gameTypeEnum.DEFAULT"></app-right-panel>
+          <!-- DSG mobile only -->
+          <app-top-panel *ngIf="themeCode === gameTypeEnum.DSG"></app-top-panel>
+     </div>
+     <div class="bottom-penal"
+          *ngIf="!hideAnchor">
+          <app-bottom-panel *ngIf="themeCode === gameTypeEnum.DEFAULT"></app-bottom-panel>
+          <!-- DSG pc only -->
+          <app-bottom-panel-dsg *ngIf="themeCode === gameTypeEnum.DSG && !isMobile"></app-bottom-panel-dsg>
+     </div>
+
+     <app-live-stream *ngIf="!isIphone"></app-live-stream>
+     <app-live-stream-iphone *ngIf="isIphone"></app-live-stream-iphone>
+     <!-- <app-bottom-sheet *ngIf="isMobile && !hideAnchor"></app-bottom-sheet> -->
+     <app-slide-up-panel *ngIf="showGiftPanel"
+                         appClickOutsild
+                         (clickOutside)="closeGiftPanel($event)"
+                         [@verticalInOutAnimation]>
+     </app-slide-up-panel>
+     <app-social-share-panel appIsMobile
+                             *ngIf="showSocialSharePanel"
+                             appClickOutsild
+                             (clickOutside)="closeSocialSharePanel($event)"
+                             [@verticalInOutAnimation]></app-social-share-panel>
+     <app-alone-chat-panel *ngIf="showAloneChatPanel"
+                           appClickOutsild
+                           (clickOutside)="closeAloneChatPanel($event)"
+                           [@verticalInOutAnimation]></app-alone-chat-panel>
+     <app-anchor-info-panel *ngIf="showAnchorInfoPanel"
+                            appClickOutsild
+                            (clickOutside)="closeAnchorInfoPanel($event)"
+                            [@inOutAnimation]></app-anchor-info-panel>
+     <app-megaphone-popup *ngIf="showMegaphonePopup"
+                          [@inOutAnimation]></app-megaphone-popup>
+     <app-scratch-off-card *ngIf="showLotteryGame"
+                           [config]="scratchCardConfig"
+                           [@inOutAnimation]></app-scratch-off-card>
+</section>

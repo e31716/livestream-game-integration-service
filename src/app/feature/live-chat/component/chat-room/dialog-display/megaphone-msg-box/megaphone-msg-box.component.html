@@ -1,0 +1,15 @@
+<div id="megaphone-msg-box"
+     appIsMobile>
+    <div class="item-wrapper"
+         (click)="boxTagUser(item.NickName)"
+         [ngClass]="themeCode">
+        <div class="vip">
+            <app-vip-rank [Rank]="item.Level"></app-vip-rank>
+        </div>
+        <span class="name">{{item.NickName}}</span>
+        <span class="megaphone-icon"></span>
+        <span class="body"
+              [innerHtml]="item.Body">
+        </span>
+    </div>
+</div>

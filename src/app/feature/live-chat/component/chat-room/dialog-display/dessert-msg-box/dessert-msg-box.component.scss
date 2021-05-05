@@ -1,0 +1,60 @@
+#dessert-msg-box {
+    .item-wrapper {
+        position: relative;
+        display: inline-block;
+        padding: 3px 10px;
+        color: #fff;
+        background-color: rgba(130, 42, 255, 0.6);
+        border-radius: 5px;
+        line-height: 14px;
+
+        * {
+            display: inline-block;
+            font-size: 12px;
+            vertical-align: middle;
+        }
+
+        .name {
+            font-weight: bold;
+            color: #fff;
+            margin: 0 6px;
+            text-shadow: 1px 1px 2px #3b3b3b;
+        }
+
+        .body {
+            display: initial;
+            line-height: 14px;
+        }
+
+        .vip {
+            line-height: 12px;
+        }
+
+        .dessert-icon {
+            display: inline-block;
+            height: 30px;
+            width: 30px;
+            margin: -7px;
+            margin-left: 2px;
+            background: url('src/assets/img/dessert/dessert_candy.png') no-repeat;
+            background-size: auto 100%;
+        }
+    }
+
+    &.is-mobile {
+        .item-wrapper {
+            padding: 1px 5px;
+
+            &.default {
+                * {
+                    font-size: 1.3vw;
+                }
+
+                .dessert-icon {
+                    height: 22px;
+                    width: 22px;
+                }
+            }
+        }
+    }
+}

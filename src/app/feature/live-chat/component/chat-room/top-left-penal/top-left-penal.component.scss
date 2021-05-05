@@ -1,0 +1,16 @@
+section {
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+
+    &.default {
+        app-button-back-lobby {
+            display: none;
+        }
+
+        app-anchor-info {
+            width: 75%;
+        }
+    }
+}

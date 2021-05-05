@@ -1,0 +1,4 @@
+<ul class="quick-list">
+    <li *ngFor="let msg of quickReplyList"
+        (click)="sendMessage(msg)">{{msg}}</li>
+</ul>

@@ -1,0 +1,17 @@
+<section id="special-notice"
+         appIsMobile
+         [ngClass]="themeCode">
+    <div *ngFor="let notice of currentLikeList"
+         [@springInOutAnimation]>
+        <div class="item"
+             [@springInOutAnimation]>
+            <div class="content"> {{notice.NickName}} Like {{anchorName}}</div>
+            <div class="flash-animate">
+                <div class="first-reflex"></div>
+                <div class="second-reflex"></div>
+                <div class="third-reflex"></div>
+                <div class="fourth-reflex"></div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,18 @@
+<div id="anchor-msg-box"
+     appIsMobile>
+  <div class="item-wrapper"
+       (click)="boxTagUser(item.NickName)"
+       [ngClass]="themeCode">
+    <div class="anchor">
+      <span class="icon-headphone"></span>
+      <span class="vip-text">{{item.Level}}</span>
+    </div>
+    <span class="name anchor-name">{{item.NickName}}</span>
+    <span *ngIf="!item.IsEmoji"
+          class="body"
+          [innerHtml]="item.Body"></span>
+    <span *ngIf="item.IsEmoji"
+          class="emoji"
+          [ngStyle]="{'background-position': parseEmojiPosition(item.Body)}"></span>
+  </div>
+</div>
